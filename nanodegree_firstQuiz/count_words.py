@@ -17,10 +17,13 @@ def count_words(s, n):
             d[word] = 1
 
     p = list(d.items())
+    # t is the parameter and t[0] is the returned value
     p_s = sorted(p, key=lambda t: t[0])
-
+    # fetch the first tuples in the list and make the first elemnt of it as a key
+    # sorted(iretable,key=fn)>>> pass each element of the list of tuples to the function parameter
+    # then the function retun the value to the Key , the key value determine type of sorting(int,string,lenth..etc)
     p_sortna = sorted(p_s, key=lambda t: t[1], reverse=True)
-
+    # fetch the first tuples in the list and make the second elemnt of it as a key
     res = p_sortna[:n]
     return res
 
